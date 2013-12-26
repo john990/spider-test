@@ -3,6 +3,7 @@ package us.codecraft.webmagic.samples;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.downloader.FileCache;
 import us.codecraft.webmagic.model.AfterExtractor;
 import us.codecraft.webmagic.processor.PageProcessor;
 
@@ -27,6 +28,7 @@ public class OschinaBlogPageProcesser implements PageProcessor {
         page.putField("tags",page.getHtml().xpath("//div[@class='BlogTags']/a/text()").all());
 	    // 抓取图片
 	    page.putField("images",page.getHtml().xpath("//div[@class='BlogContent']//img[not(contains(@src,'img_proxy'))]/@src").all());
+	    FileCache fileCache = new FileCache("","","");
     }
 
     @Override
