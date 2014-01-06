@@ -38,9 +38,10 @@ public class HuabanProcessor implements PageProcessor {
 	}
 
 	public static void main(String[] args) {
+		String rootPath = System.getProperty("user.dir");
 		Spider.create(new HuabanProcessor()).thread(5)
 		      .pipeline(new FilePipeline("/data/webmagic/test/"))
-		      .downloader(new SeleniumDownloader("D:\\cloud\\code\\work\\idea\\spider-test\\document\\driver\\chromedriver.exe"))
+		      .downloader(new SeleniumDownloader(rootPath + "/spider-test/document\\driver\\chromedriver.exe"))
 		      .runAsync();
 	}
 }
