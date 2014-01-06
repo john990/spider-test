@@ -1,4 +1,4 @@
-package com.spider.test;
+package com.spider.demo;
 
 
 import us.codecraft.webmagic.Page;

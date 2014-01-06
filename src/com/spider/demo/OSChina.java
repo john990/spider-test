@@ -1,11 +1,10 @@
-package com.spider.test;
+package com.spider.demo;
 
 import java.util.List;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.processor.example.OschinaBlogPageProcesser;
 
