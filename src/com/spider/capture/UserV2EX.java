@@ -31,7 +31,9 @@ public class UserV2EX implements PageProcessor {
 
 		user.setPassword("666777dfd");
 		user.setEmail("robot@gmail.com");
+
 		UserDao.saveUniqueUser(user);
+
 		System.out.println(user.toString());
 	}
 
