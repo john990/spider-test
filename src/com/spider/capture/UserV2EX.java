@@ -35,7 +35,6 @@ public class UserV2EX implements PageProcessor {
 	@Override
 	public Site getSite() {
 		return site;
-
 	}
 
 	public static void main(String[] args) {
