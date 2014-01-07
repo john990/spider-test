@@ -1,6 +1,7 @@
 package com.spider.capture;
 
 import com.spider.bean.User;
+import com.spider.dao.UserDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class UserV2EX implements PageProcessor {
 		user.setAvatar(avatar.substring(0,avatar.lastIndexOf("?")));
 		user.setPassword("666777dfd");
 		user.setEmail("robot@gmail.com");
+		UserDao.saveUniqueUser(user);
 		System.out.println(user.toString());
 	}
 
