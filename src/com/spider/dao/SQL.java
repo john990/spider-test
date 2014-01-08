@@ -5,7 +5,7 @@ import com.base.io.Read;
 /**
  * Created by kai.wang on 1/7/14.
  */
-public class SQL {
+class SQL {
 
 	/** save user */
 	public static final String SAVE_USER = Read.readSql("save_user.sql");
