@@ -16,20 +16,24 @@ import us.codecraft.webmagic.selector.Selectable;
  * xinli001.com
  */
 public class Xinli001Post implements PageProcessor {
-	private Site site = Site.me().setDomain("xinli001.com").addStartUrl("http://www.xinli001.com/info/1");
+	private Site site = Site.me().setDomain("xinli001.com").addStartUrl("http://www.xinli001.com/info/10538/");
 
 	private static List<String> links = new ArrayList<String>();
 	@Override
 	public void process(Page page) {
 		page.addTargetRequests(links);
 		String title = page.getHtml().xpath("//div[@class='tinfo fl']/h2/text()").toString();
+		if(title == null) return;
 		String content = page.getHtml().xpath("//div[@class='show_contents']/html()").toString();
+		content = content.replaceAll("壹心理","");
+		content = content.replaceAll("www.xinli001.com","");
 		// 3-23
-		String createAt = page.getHtml().xpath("//div[@class='tinfo fl']/span").toString();
-		String tag = page.getHtml().xpath("//div[@class='tags']/a/text()").toString();
-		String images = page.getHtml().xpath("//div[@class='show_contents']//img/@src").toString();
-		String fromName = page.getHtml().xpath("//p[@class='xh-heightlight']/a").toString();
-		String fromLink = page.getHtml().xpath("//p[@class='xh-heightlight']/a/@href").toString();
+		String createAt = page.getHtml().xpath("//div[@class='tinfo fl']/span[1]/text()").toString();
+		createAt = createAt.substring(3,22);
+		String tag = page.getHtml().xpath("//div[@class='tags']/a/text()").all().toString();
+		String images = page.getHtml().xpath("//div[@class='show_contents']//img/@src").all().toString();
+		String fromName = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/text()").toString();
+		String fromLink = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/@href").all().toString();
 
 		Post post = new Post();
 		post.setTitle(title);
