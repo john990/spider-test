@@ -10,10 +10,30 @@ Target Server Type    : MYSQL
 Target Server Version : 50614
 File Encoding         : 65001
 
-Date: 2014-01-07 14:09:19
+Date: 2014-01-09 17:03:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for post_xinli001
+-- ----------------------------
+DROP TABLE IF EXISTS `post_xinli001`;
+CREATE TABLE `post_xinli001` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `content` longtext,
+  `date` datetime DEFAULT NULL,
+  `tag` varchar(255) DEFAULT NULL,
+  `images` text,
+  `from_web` varchar(255) DEFAULT NULL,
+  `from_link` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of post_xinli001
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for user
