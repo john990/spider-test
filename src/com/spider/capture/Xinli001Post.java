@@ -32,8 +32,8 @@ public class Xinli001Post implements PageProcessor {
 		createAt = createAt.substring(3,22);
 		String tag = page.getHtml().xpath("//div[@class='tags']/a/text()").all().toString();
 		String images = page.getHtml().xpath("//div[@class='show_contents']//img/@src").all().toString();
-		String fromName = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/text()").toString();
-		String fromLink = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/@href").all().toString();
+//		String fromName = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/text()").toString();
+//		String fromLink = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/@href").all().toString();
 
 		Post post = new Post();
 		post.setTitle(title);
@@ -41,8 +41,8 @@ public class Xinli001Post implements PageProcessor {
 		post.setCreateAt(createAt);
 		post.setTag(tag);
 		post.setImages(images);
-		post.setFromName(fromName);
-		post.setFromLink(fromLink);
+		post.setFromName("壹心理");
+		post.setFromLink(page.getUrl().toString());
 		System.out.println(post.toString());
 	}
 
