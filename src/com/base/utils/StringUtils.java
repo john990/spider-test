@@ -17,6 +17,9 @@ public class StringUtils {
 	 * @return
 	 */
 	public static String cleanBracket(String str){
+		if(isEmpty(str)){
+			return str;
+		}
 		return str.replaceAll("\\[","").replaceAll("]","");
 	}
 
