@@ -18,7 +18,7 @@ import us.codecraft.webmagic.selector.Selectable;
  * xinli001.com
  */
 public class Xinli001Post implements PageProcessor {
-	private Site site = Site.me().setDomain("xinli001.com").addStartUrl("http://www.xinli001.com/info/10538/");
+	private Site site = Site.me().setDomain("xinli001.com").addStartUrl("http://www.xinli001.com/info/451/");
 
 	private static List<String> links = new ArrayList<String>();
 	@Override
@@ -62,7 +62,7 @@ public class Xinli001Post implements PageProcessor {
 	}
 
 	public static void main(String[] args){
-		for(int i=1;i<11000;i++){
+		for(int i=452;i<11000;i++){
 			links.add("http://www.xinli001.com/info/"+i);
 		}
 		Spider.create(new Xinli001Post()).run();
