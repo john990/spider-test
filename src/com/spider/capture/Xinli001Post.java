@@ -1,6 +1,8 @@
 package com.spider.capture;
 
+import com.base.utils.StringUtils;
 import com.spider.bean.Post;
+import com.spider.dao.PostDao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,11 @@ public class Xinli001Post implements PageProcessor {
 //		String fromName = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/text()").toString();
 //		String fromLink = page.getHtml().xpath("//div[@class='show_contents']/p[contains(text(),'来源')]/a/@href").all().toString();
 
+
+		tag = StringUtils.cleanBracket(tag);
+		images = StringUtils.cleanBracket(images);
+
+
 		Post post = new Post();
 		post.setTitle(title);
 		post.setContent(content);
@@ -43,7 +50,10 @@ public class Xinli001Post implements PageProcessor {
 		post.setImages(images);
 		post.setFromName("壹心理");
 		post.setFromLink(page.getUrl().toString());
-		System.out.println(post.toString());
+
+		PostDao.saveXinli001Post(post);
+
+//		System.out.println(post.toString());
 	}
 
 	@Override

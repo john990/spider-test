@@ -1,0 +1,1 @@
+INSERT INTO POST_XINLI001 (title,content,date,tag,images,from_web,from_link) VALUES (?,?,?,?,?,?,?)

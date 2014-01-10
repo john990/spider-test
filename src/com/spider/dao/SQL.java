@@ -12,4 +12,8 @@ class SQL {
 
 	/** find user by name */
 	public static final String FIND_USER_BY_NAME = Read.readSql("find_user_by_name.sql");
+
+	/** xinli001.com save post */
+	public static final String XINLI001_SAVE_POST = Read.readSql("xinli001_save_post.sql");
+
 }

@@ -10,4 +10,14 @@ public class StringUtils {
 		}
 		return false;
 	}
+
+	/**
+	 * 删除中括号
+	 * @param str
+	 * @return
+	 */
+	public static String cleanBracket(String str){
+		return str.replaceAll("\\[","").replaceAll("]","");
+	}
+
 }
