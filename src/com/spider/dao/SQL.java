@@ -16,4 +16,7 @@ class SQL {
 	/** xinli001.com save post */
 	public static final String XINLI001_SAVE_POST = Read.readSql("xinli001_save_post.sql");
 
+	/** find_xinli001post_all */
+	public static final String FIND_XINLI001POST_ALL = Read.readSql("find_xinli001post_all.sql");
+
 }
