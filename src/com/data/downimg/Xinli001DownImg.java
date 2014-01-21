@@ -1,17 +1,10 @@
 package com.data.downimg;
 
-import com.img.get.ImgGet;
-import com.img.get.info.DownloadInfo;
-import com.spider.bean.Xinli001Post;
-import com.spider.dao.Xinli001Dao;
-
-import java.util.List;
-
 /**
  * Created by kai.wang on 1/13/14.
  */
 public class Xinli001DownImg {
-	public static void main(String[] args){
+    public static void main(String[] args) {
 //		ImgGet wget = new ImgGet.Builder()
 //				.setThreadPoolSize(4)
 //				.setOutputFloder("/img-get/")
@@ -29,5 +22,5 @@ public class Xinli001DownImg {
 //			downloadInfo.setFlag(i);
 //			wget.addTask(downloadInfo);
 //		}
-	}
+    }
 }

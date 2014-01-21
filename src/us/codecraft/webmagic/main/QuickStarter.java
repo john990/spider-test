@@ -1,5 +1,9 @@
 package us.codecraft.webmagic.main;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.OOSpider;
 import us.codecraft.webmagic.model.samples.IteyeBlog;
@@ -7,10 +11,6 @@ import us.codecraft.webmagic.model.samples.News163;
 import us.codecraft.webmagic.model.samples.OschinaBlog;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.pipeline.MultiPagePipeline;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
 
 /**
  * @author code4crafter@gmail.com <br>
@@ -21,7 +21,7 @@ public class QuickStarter {
 
     private static Map<String, String> urlMap;
 
-    private static void init(){
+    private static void init() {
         clazzMap = new LinkedHashMap<String, Class>();
         clazzMap.put("1", OschinaBlog.class);
         clazzMap.put("2", IteyeBlog.class);
@@ -54,7 +54,7 @@ public class QuickStarter {
         Scanner stdin = new Scanner(System.in);
         System.out.println("Choose a Spider demo:");
         for (Map.Entry<String, Class> classEntry : clazzMap.entrySet()) {
-            System.out.println(classEntry.getKey()+"\t" + classEntry.getValue() + "\t" + urlMap.get(classEntry.getKey()));
+            System.out.println(classEntry.getKey() + "\t" + classEntry.getValue() + "\t" + urlMap.get(classEntry.getKey()));
         }
         while (key == null) {
             key = new String(stdin.nextLine());

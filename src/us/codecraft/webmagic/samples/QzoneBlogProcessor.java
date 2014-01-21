@@ -1,10 +1,10 @@
 package us.codecraft.webmagic.samples;
 
+import java.util.List;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
-
-import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
@@ -18,8 +18,8 @@ public class QzoneBlogProcessor implements PageProcessor {
         // &cateName=&cateHex=&statYear=2013&reqInfo=7&pos=0&num=15&sortType=0&source=0&rand=0.46480297949165106&g_tk=291639571&verbose=1&ref=qzone
         List<String> requests = page.getHtml().regex("<a[^<>]*href=[\"']{1}(http://17dujingdian\\.com/post/[^#]*?)[\"']{1}").all();
         page.addTargetRequests(requests);
-        page.putField("title",page.getHtml().xpath("//div[@id='content']//h2/a"));
-        page.putField("content",page.getHtml().smartContent());
+        page.putField("title", page.getHtml().xpath("//div[@id='content']//h2/a"));
+        page.putField("content", page.getHtml().smartContent());
     }
 
     @Override

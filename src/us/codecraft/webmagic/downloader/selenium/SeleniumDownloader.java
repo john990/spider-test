@@ -5,6 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.Map;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
@@ -14,17 +19,13 @@ import us.codecraft.webmagic.selector.Html;
 import us.codecraft.webmagic.selector.PlainText;
 import us.codecraft.webmagic.utils.UrlUtils;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.util.Map;
-
 /**
  * 使用Selenium调用浏览器进行渲染。目前仅支持chrome。<br>
  * 需要下载Selenium driver支持。<br>
  *
  * @author code4crafter@gmail.com <br>
- * Date: 13-7-26 <br>
- * Time: 下午1:37 <br>
+ *         Date: 13-7-26 <br>
+ *         Time: 下午1:37 <br>
  */
 public class SeleniumDownloader implements Downloader, Closeable {
 
@@ -93,7 +94,7 @@ public class SeleniumDownloader implements Downloader, Closeable {
 
     private void checkInit() {
         if (webDriverPool == null) {
-            synchronized (this){
+            synchronized (this) {
                 webDriverPool = new WebDriverPool(poolSize);
             }
         }

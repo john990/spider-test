@@ -1,14 +1,15 @@
 package us.codecraft.webmagic.samples.scheduler;
 
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.scheduler.PriorityScheduler;
-
-import java.util.List;
 
 import static us.codecraft.webmagic.selector.Selectors.regex;
 import static us.codecraft.webmagic.selector.Selectors.xpath;
@@ -18,8 +19,7 @@ import static us.codecraft.webmagic.selector.Selectors.xpath;
  */
 public class ZipCodePageProcessor implements PageProcessor {
 
-    private Site site = Site.me().setCharset("gb2312")
-            .setSleepTime(100).addStartUrl("http://www.ip138.com/post/");
+    private Site site = Site.me().setCharset("gb2312").setSleepTime(100).addStartUrl("http://www.ip138.com/post/");
 
     @Override
     public void process(Page page) {
@@ -63,8 +63,7 @@ public class ZipCodePageProcessor implements PageProcessor {
             String county0 = regex(regex, 1).select(county);
             String county1 = regex(regex, 2).select(county);
             String zipCode = regex(regex, 3).select(county);
-            page.putField("result", StringUtils.join(new String[]{province, district,
-                    county0, county1, zipCode}, "\t"));
+            page.putField("result", StringUtils.join(new String[]{province, district, county0, county1, zipCode}, "\t"));
         }
         List<String> links = page.getHtml().links().regex("http://www\\.ip138\\.com/post/\\w+/\\w+").all();
         for (String link : links) {
@@ -83,7 +82,7 @@ public class ZipCodePageProcessor implements PageProcessor {
 
         PriorityScheduler scheduler = new PriorityScheduler();
         Spider spider = Spider.create(new ZipCodePageProcessor()).scheduler(scheduler);
-        scheduler.push(new Request("http://www.baidu.com/s?wd=webmagic&f=12&rsp=0&oq=webmagix&tn=baiduhome_pg&ie=utf-8"),spider);
+        scheduler.push(new Request("http://www.baidu.com/s?wd=webmagic&f=12&rsp=0&oq=webmagix&tn=baiduhome_pg&ie=utf-8"), spider);
         spider.run();
     }
 }

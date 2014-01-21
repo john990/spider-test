@@ -1,22 +1,22 @@
 package us.codecraft.webmagic.model.samples;
 
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.OOSpider;
+import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
 
 /**
  * @author code4crafter@gmail.com <br>
- * Date: 13-8-2 <br>
- * Time: 上午7:52 <br>
+ *         Date: 13-8-2 <br>
+ *         Time: 上午7:52 <br>
  */
 @TargetUrl("http://*.iteye.com/blog/*")
-public class IteyeBlog implements Blog{
+public class IteyeBlog implements Blog {
 
     @ExtractBy("//title")
     private String title;
 
-    @ExtractBy(value = "div#blog_content",type = ExtractBy.Type.Css)
+    @ExtractBy(value = "div#blog_content", type = ExtractBy.Type.Css)
     private String content;
 
     @Override

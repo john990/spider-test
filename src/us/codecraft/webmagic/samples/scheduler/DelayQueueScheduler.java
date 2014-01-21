@@ -1,14 +1,14 @@
 package us.codecraft.webmagic.samples.scheduler;
 
-import us.codecraft.webmagic.Request;
-import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.scheduler.PriorityScheduler;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+
+import us.codecraft.webmagic.Request;
+import us.codecraft.webmagic.Task;
+import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 /**
  * @author code4crafter@gmail.com

@@ -1,10 +1,10 @@
 package us.codecraft.webmagic.samples;
 
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.processor.PageProcessor;
-
 import java.util.List;
+
+import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Site;
+import us.codecraft.webmagic.processor.PageProcessor;
 
 /**
  * @author code4crafter@gmail.com <br>

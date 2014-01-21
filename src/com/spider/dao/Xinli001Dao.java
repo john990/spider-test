@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class Xinli001Dao {
 
-	public static List<Xinli001Post> findAllPost(){
-		QueryRunner runner = new QueryRunner(DBManager.getDataSource());
-		return QueryHelper.queryBeanList(runner,Xinli001Post.class, SQL.FIND_XINLI001POST_ALL);
-	}
+    public static List<Xinli001Post> findAllPost() {
+        QueryRunner runner = new QueryRunner(DBManager.getDataSource());
+        return QueryHelper.queryBeanList(runner, Xinli001Post.class, SQL.FIND_XINLI001POST_ALL);
+    }
 }

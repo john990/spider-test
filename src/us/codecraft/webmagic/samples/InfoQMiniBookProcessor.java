@@ -1,12 +1,13 @@
 package us.codecraft.webmagic.samples;
 
 import org.apache.commons.collections.CollectionUtils;
+
+import java.util.List;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
-
-import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
@@ -36,8 +37,6 @@ public class InfoQMiniBookProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new InfoQMiniBookProcessor())
-                .thread(5)
-                .run();
+        Spider.create(new InfoQMiniBookProcessor()).thread(5).run();
     }
 }
